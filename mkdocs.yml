@@ -1,0 +1,66 @@
+site_name: watsonx Code Assistant for Z Workshop
+repo_url: https://github.com/mmondics/wsc-wca4z/
+site_url: https://mmondics.github.io/wsc-wca4z/
+edit_uri: edit/main/docs
+
+nav:
+    - Home: 'index.md'
+    # - Prerequisites: 'prerequisites.md'
+    # - Lab Assignments: 'lab-assignments.md'
+    - Lab Architecture: 'workshop-architecture.md'
+    - Presentations:
+      - Presentation: presentations/presentation.pdf
+    - Hands-on Lab: 'lab.md'
+    - Labs: 
+      - watsonx Code Assistant for Z: 
+        - Lab Documentation 1: 'labs/lab.md'
+        - Lab Documentation 2: 'labs/lab2.md'
+
+theme: 
+  name: material
+  palette:
+    scheme: default
+    primary: blue
+    font:
+      text: IBM Plex Sans
+      code: IBM Plex Mono
+  favicon: images/wca4z-logo.svg
+  logo: images/wca4z-logo.svg
+
+# extra_css:
+#   - stylesheets/extra.css
+
+copyright: Copyright © 2024 IBM Z Washington Systems Center
+
+plugins:
+  - search
+#  - enumerate-headings:
+#      toc_depth: 6
+#      strict: true
+  - print-site:
+      add_to_navigation: true
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - footnotes
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tabbed
+  - pymdownx.tilde
+  - attr_list
+  - toc:
+      permalink: true
