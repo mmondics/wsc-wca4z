@@ -6,15 +6,17 @@ edit_uri: edit/main/docs
 nav:
     - Home: 'index.md'
     # - Prerequisites: 'prerequisites.md'
-    # - Lab Assignments: 'lab-assignments.md'
-    - Lab Architecture: 'workshop-architecture.md'
+
     - Presentations:
-      - Presentation: presentations/presentation.pdf
-    - Hands-on Lab: 'lab.md'
-    - Labs: 
-      - watsonx Code Assistant for Z: 
-        - Lab Documentation 1: 'labs/lab.md'
-        - Lab Documentation 2: 'labs/lab2.md'
+      - Presentation: 'presentations/watsonx Code Assistant for Z Overview - WSC Workshop July 9 2024.pdf'
+    - Lab Architecture: 'workshop-architecture.md'
+    - Lab Assignments: 'lab-assignments.md'
+    - Lab Documentation: 
+      - Lab Overview: 'labs/overview.md'
+      - Understand Phase: 'labs/understand.md'
+      - Refactor Phase: 'labs/refactor.md'
+      - Transform Phase: 'labs/transform.md'
+      - Validate Phase: 'labs/validate.md'
 
 theme: 
   name: material
@@ -38,6 +40,7 @@ theme:
     - search.highlight
     - navigation.instant
     - navigation.instant.progress
+    - navigation.footer
   favicon: images/wca4z-logo.svg
   logo: images/wca4z-logo.svg
 
@@ -48,7 +51,9 @@ copyright: Copyright © 2024 IBM Z Washington Systems Center
 
 plugins:
   - search
-  - htmlproofer
+  - htmlproofer:
+      ignore_urls:
+        - mailto:*
   - autolinks
   - print-site:
       add_to_navigation: true
