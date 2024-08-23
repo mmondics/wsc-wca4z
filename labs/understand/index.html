@@ -1,0 +1,924 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://mmondics.github.io/wsc-wca4z/labs/understand/">
+      
+      
+        <link rel="prev" href="../overview/">
+      
+      
+        <link rel="next" href="../refactor/">
+      
+      
+      <link rel="icon" href="../../images/wca4z-logo.svg">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
+    
+    
+      
+        <title>Understand Phase - watsonx Code Assistant for Z Workshop</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bcfcd587.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings1.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings2.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings3.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings4.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings5.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings6.css">
+    
+      <link rel="stylesheet" href="../../css/print-site.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-material.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#understand-phase" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="watsonx Code Assistant for Z Workshop" class="md-header__button md-logo" aria-label="watsonx Code Assistant for Z Workshop" data-md-component="logo">
+      
+  <img src="../../images/wca4z-logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            watsonx Code Assistant for Z Workshop
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Understand Phase
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_2">
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/mmondics/wsc-wca4z/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="watsonx Code Assistant for Z Workshop" class="md-nav__button md-logo" aria-label="watsonx Code Assistant for Z Workshop" data-md-component="logo">
+      
+  <img src="../../images/wca4z-logo.svg" alt="logo">
+
+    </a>
+    watsonx Code Assistant for Z Workshop
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/mmondics/wsc-wca4z/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Presentations
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Presentations
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../presentations/watsonx%20Code%20Assistant%20for%20Z%20Overview%20-%20WSC%20Workshop%20July%209%202024.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Presentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workshop-architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab-assignments/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab Assignments
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Lab Documentation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Lab Documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Understand Phase
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Understand Phase
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview-of-the-understand-phase" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview of the Understand phase
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#initial-login-to-the-lab-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Initial login to the lab environment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introducing-genapp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introducing GenApp
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explore-the-application-using-addi-and-ibm-developer-for-zos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explore the application using ADDI and IBM Developer for z/OS
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../refactor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Refactor Phase
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../transform/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Transform Phase
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../validate/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Validate Phase
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../print_page/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Print Site
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview-of-the-understand-phase" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview of the Understand phase
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#initial-login-to-the-lab-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Initial login to the lab environment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introducing-genapp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introducing GenApp
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explore-the-application-using-addi-and-ibm-developer-for-zos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explore the application using ADDI and IBM Developer for z/OS
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="understand-phase">Understand Phase<a class="headerlink" href="#understand-phase" title="Permanent link">&para;</a></h1>
+<h2 id="overview-of-the-understand-phase">Overview of the Understand phase<a class="headerlink" href="#overview-of-the-understand-phase" title="Permanent link">&para;</a></h2>
+<p>During the <em>Understand</em> phase an application architect uses <em>Application Discovery and Delivery Intelligence (ADDI)</em> to analyze an application, primarily through its source code, but also often through other artifacts.  The analysis performed by ADDI is stored in an <em>ADDI Project</em>, using a relational database schema.  The application architect uses the <em>ADDI Analyze Client</em> to create and view charts, graphs and reports in order to help gain a better understanding of the application and identify candidates for refactoring.</p>
+<p><strong>Note:</strong> Even if an enterprise already has a perfect understanding of their COBOL application, the <em>Understand</em> phase is a prerequisite for the <em>Refactor</em> phase, because the components used in the <em>Refactoring</em> phase read an ADDI project's database.</p>
+<p><strong>Note:</strong> ADDI is a powerful product, with a large number of features and reports.  This lab only scratches the surface of what can be done in ADDI with a realistic application. The <em>Understand</em> phase is a critical part of the <em>watsonx Code Assistant for Z</em> workflow, the importance of which is likely understated by the ADDI-related lab instructions- in real-world usage scenarios it is to your benefit to give proper weight to the <em>Understand</em> phase.</p>
+<h2 id="initial-login-to-the-lab-environment">Initial login to the lab environment<a class="headerlink" href="#initial-login-to-the-lab-environment" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>Log in to your IBM Z Virtual Access (zVA) environment.  Your lab environment is a Windows system that you will access via your web browser.</p>
+<p>Your <a href="../../lab-assignments/" rel="noopener" target="_blank">access details for your environment are on this page</a>. If you are not sure how to access your environment, please ask your lab instructor for help.</p>
+<p>The picture below shows what your browser tab or window should look like after you have successfully logged in to your zVA environment.</p>
+<p><img alt="zva-desktop" src="../../images/zva-desktop.png" /></p>
+<p><strong>Note:</strong> All lab instructions, unless explictly noted, are performed within your browser tab or window in which your zVA Windows environment is displayed. </p>
+</li>
+</ol>
+<h2 id="introducing-genapp">Introducing GenApp<a class="headerlink" href="#introducing-genapp" title="Permanent link">&para;</a></h2>
+<p>In this lab, you will be using the general insurance application, <strong>GenApp</strong>. GenApp is a sample CICS COBOL application that provides transactions that <em>could be</em> used by an insurance company to create and manage its customers and insurance policies.  <em>Could be</em> was italicized in the previous sentence as GenApp is provided primarily for educational and testing purposes- if you are an actual insurance company it is likely that market forces would encourage you to use transactions that are slightly more sophisticated than the ones in GenApp.</p>
+<p>You can read more about GenApp <a href="https://www.ibm.com/docs/en/cics-ts/6.1?topic=samples-general-insurance-application" rel="noopener" target="_blank">here</a> and its architecture <a href="https://www.ibm.com/docs/en/cics-ts/6.1?topic=application-architecture" rel="noopener" target="_blank">here</a>.</p>
+<h2 id="explore-the-application-using-addi-and-ibm-developer-for-zos">Explore the application using ADDI and IBM Developer for z/OS<a class="headerlink" href="#explore-the-application-using-addi-and-ibm-developer-for-zos" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>Open <a href="https://www.ibm.com/products/developer-for-zos" rel="noopener" target="_blank"><em>IBM Developer for z/OS (IDz)</em></a> from the taskbar. IDz is built on the open source Eclipse project.  The <em>ADDI Analyze Client</em> functionality is delivered via Eclipse-based plugins, so the application architect performs analysis within IDz using functionality provided by these plugins. </p>
+<p><img alt="zva-desktop-idz" src="../../images/zva-desktop-idz.png" /></p>
+</li>
+<li>
+<p>After a short while you will probably see a "splash screen" for <em>IBM Developer for z/OS</em>. Then it will disappear and you may be prompted with the <em>Select a directory as workspace</em> popup window. If you receive this, leave the default workspace path unchanged and click <em>Launch</em>.</p>
+<p>The correct workspace path should be: </p>
+<div class="highlight"><pre><span></span><code>C:\Users\Administrator\.zosexplorer
+</code></pre></div>
+<p><img alt="idz-launch" src="../../images/idz-launch.png" /></p>
+<p>The launcher window will close, the splash screen may return for a moment, then disappear, and finally the <em>Application Discovery Browser</em> perspective provided by ADDI will be opened up within IDz.</p>
+<p><strong>IDz can take a few minutes to fully load in your lab environment. After clicking <em>Launch</em>, the popup window will close and it may look like the application is not opening. Please be patient- wait at least three minutes before you wake up the instructors.</strong></p>
+</li>
+<li>
+<p>Once you see the <em>Explore projects</em> tab, right-click on the empty list of projects and click <em>Get Project List</em>.</p>
+<p><img alt="idz-get-projects" src="../../images/idz-get-projects.png" /></p>
+<p>The GenApp project will appear.</p>
+<p><img alt="idz-genapp-project" src="../../images/idz-genapp-project.png" /></p>
+</li>
+<li>
+<p>Click the GenApp project to highlight it. This will bring up a new pane on the right side of the page that shows the many charts, graphs and reports that are provided by ADDI.  Information about these reports can be found in the <a href="https://www.ibm.com/docs/en/addi/6.1.2?topic=guide-analyzing-applications-ad-analyze" rel="noopener" target="_blank">ADDI documentation</a>.  </p>
+<p>Double-click <em>Program Callgraph</em> in the new pane.</p>
+<p><img alt="idz-program-callgraph" src="../../images/idz-program-callgraph.png" /></p>
+</li>
+<li>
+<p>A new window will appear where you can select which programs to analyze. It may take a moment for the program names to appear in the <em>Available programs</em> pane within the window. Once they do, click the double arrow button to move all of the programs from <em>Available programs</em> to <em>Selected programs</em>, then click <em>Finish</em>.  </p>
+<p><img alt="idz-select-programs-all" src="../../images/idz-select-programs-all.png" /></p>
+<p>Please be patient. This can take a minute or two to fully load.</p>
+<p>When loaded, you will see a call graph for all programs, CICS transactions, tables, and other files in the GenApp application and the interdependencies between them.</p>
+<p><img alt="idz-callgraph-all" src="../../images/idz-callgraph-all.png" /></p>
+<p>This is an interactive chart. You can zoom in and scroll around the graph to see different objects. One way to zoom in is to click the <em>Interactive Zoom Tool</em> icon in the toolbar at the upper right of the chart.  Hover over the icons until you find the <em>Interactive Zoom Tool</em>.  Then click on the chart and very slowly drag your cursor in order to zoom in on the chart.  You can also right-click the objects to see more specific details about them.</p>
+<p><strong>Note:</strong> Trying to zoom in and out on the graph in the zVA browser tab or window can be difficult- it is easy to get in a state where you wish you could start over.  You can- just close the graph by clicking the <em>x</em> icon on its tab and then repeat step 4 and this step.</p>
+</li>
+<li>
+<p>In the left-side of the page, you will see a Graph Inventory. Notice that the CICS transactions, COBOL Programs, and different object types have been identified. Expand the <em>COBOL Programs</em> section to see the list of COBOL programs that are part of GenApp.</p>
+<p><img alt="idz-inventory-cobol" src="../../images/idz-inventory-cobol.png" /></p>
+</li>
+<li>
+<p>In the <em>Graph Inventory</em>, right-click the <code>GETPAVG</code> program, hover over <em>Mainframe Graphs</em>, and select <em>Program Callgraph</em>.</p>
+<p><img alt="idz-getpavg-callgraph" src="../../images/idz-getpavg-callgraph.png" /></p>
+</li>
+<li>
+<p>Leave the default options unchanged and click <em>Finish</em>.</p>
+<p><img alt="idz-getpavg-callgraph-2" src="../../images/idz-getpavg-callgraph-2.png" /></p>
+<p>A new callgraph will be generated that is scoped to only the objects in the application flow that are used by the <em>GETPAVG</em> program or by other programs that are called by <em>GETPAVG</em>.</p>
+<p><img alt="idz-getpavg-callgraph-3" src="../../images/idz-getpavg-callgraph-3.png" /></p>
+<p>Two COBOL programs should be displayed in the callgraph: </p>
+<ol>
+<li>The main program <em>GETPAVG</em>. This program accesses the input and output files.</li>
+<li>A called program named <em>GETAAVG</em>. This program accesses various SQL tables shown at the bottom of the callgraph.</li>
+</ol>
+</li>
+<li>
+<p>Double-click on the COBOL program named <em>GETAAVG</em> to open a new panel at the bottom with the COBOL source code of <em>GETAAVG</em>. Maximize the source code by clicking the button in the top-right of the panel.</p>
+<p><img alt="idz-getaavg" src="../../images/idz-getaavg.png" /></p>
+<p>The COBOL program <em>GETAAVG</em> should now be maximized.</p>
+<p><img alt="idz-getaavg-2" src="../../images/idz-getaavg-2.png" /></p>
+<p>If you look through the <em>GETAAVG</em> source code, you will find that in the <em>2000-CHECK-TYPE</em> paragraph it will perform different operations depending on the request ID (<em>IN-REQUEST-ID</em> data item) passed in to <em>GETAAVG</em> via its <em>LINKAGE SECTION</em>:</p>
+<ol>
+<li>Customer Action (<code>0AVCUS</code>)</li>
+<li><strong>Get Average Premium</strong> (<code>0AVMOT</code>)</li>
+<li>Get Endowment (<code>0AVEND</code>)</li>
+<li>Get House (<code>0AVHO</code>)</li>
+<li>Get Commercial (<code>0AVCOM</code>)</li>
+</ol>
+<p>For the purposes of this lab, let's assume that the application architect has identified the paragraph that implements the <em>Get Average Premium</em> functionality as a good candidate for refactoring.  (This is why we've highlighted <em>Get Average Premium</em> in the above list.)</p>
+</li>
+<li>
+<p>Scroll down to line 342 in the COBOL code until you find the <em>3100-GET-AVG-MOT-PREMIUM</em> paragraph. </p>
+<p><img alt="idz-3100" src="../../images/idz-3100.png" /></p>
+<p><strong>Hint:</strong> You can check the line you're on using the first number pointed out in the image above- this shows the location of the current cursor position so you may need to click inside the source code after you've scrolled.</p>
+<p>The <em>3100-GET-AVG-MOT-PREMIUM</em> paragraph is one small part of the overall GenApp sample application. It is called when the request ID is <em>0AVMOT</em>.</p>
+<p>This paragraph calculates the average premiums for a customer's motor vehicle insurance policies.  The application architect decides that this would be a good service to refactor into a modular business service.</p>
+<p>In the next section of the lab, you will refactor this paragraph into a separate COBOL service, and then in the section after that, you will transform this service into Java code.</p>
+<p>You will not be using IDz anymore in the lab instructions so you may either minimize it or exit from it altogether.</p>
+</li>
+</ol>
+<p>In the <em>Understand</em> phase,</p>
+<ol>
+<li>We selected the <em>GETPAVG</em> program to understand its flow and related components.</li>
+<li>We explored the called program <em>GETAAVG</em> and its <em>3100-GET-AVG-MOT-PREMIUM</em> paragraph and decided that the functionality in this paragraph is a good candidate for refactoring into a modular COBOL service and for then transforming into Java code.</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../overview/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Lab Overview">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Lab Overview
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../refactor/" class="md-footer__link md-footer__link--next" aria-label="Next: Refactor Phase">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Refactor Phase
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2024 IBM Z Washington Systems Center
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "navigation.instant", "navigation.instant.progress", "navigation.footer"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.1e8ae164.min.js"></script>
+      
+        <script src="../../js/print-site.js"></script>
+      
+    
+  </body>
+</html>
